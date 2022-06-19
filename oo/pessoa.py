@@ -14,11 +14,21 @@ class Pessoa:#classe
 if __name__ == '__main__': ##este é o teste da classe
     renzo = Pessoa(nome='Renzo') #objeto
     luciano = Pessoa(renzo, nome='Luciano',idade=50) #objeto
+
     print(Pessoa.cumprimentar(luciano))
     print(id(luciano))
     print(luciano.cumprimentar())
     print(luciano.nome)
     print(luciano.idade)
+
     for filho in luciano.filhos:
         print(filho.nome)
+
+    luciano.sobrenome = "Ramalho"
+
+    del luciano.filhos
+    
+    print(luciano.__dict__)
+    print(renzo.__dict__)
+    
    
