@@ -3,6 +3,8 @@ Aula sobre Métodos
 """
 
 class Pessoa:#classe
+    olhos = 2
+
     def __init__(self, *filhos, nome=None, idade=39):
         self.idade = idade
         self.nome = nome
@@ -27,8 +29,16 @@ if __name__ == '__main__': ##este é o teste da classe
     luciano.sobrenome = "Ramalho"
 
     del luciano.filhos
-    
+    luciano.olhos = 1
+    del luciano.olhos
     print(luciano.__dict__)
     print(renzo.__dict__)
-    
-   
+    Pessoa.olhos = 3
+    '''.
+    __dict__ é um atributo python  que revela todos
+    os atribuitos de instância de uma função
+    '''
+    print(Pessoa.olhos) 
+    print(luciano.olhos) 
+    print(renzo.olhos) 
+    print(id(Pessoa.olhos), id(luciano.olhos), id(renzo.olhos))
